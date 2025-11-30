@@ -62,7 +62,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-900">Email</p>
-                  <p className="text-sm text-gray-600">contact@pouchfactory.com</p>
+                  <p className="text-sm text-gray-600">sebastian@pouchfactory.us</p>
                 </div>
               </div>
             </div>
