@@ -32,8 +32,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <Square className="h-8 w-8 rounded text-[#005293]" strokeWidth={3} />
-          <span className="text-xl font-bold tracking-tight text-gray-900">POUCH FACTORY</span>
+        <img src="/logo.png" alt="Pouch Factory" className="h-10 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
