@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react"
 import { AgeVerificationModal } from "@/components/age-verification-modal"
 import { NicotineWarningBanner } from "@/components/nicotine-warning-banner"
-import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
-import { TrustIndicators } from "@/components/trust-indicators"
-import { AboutSection } from "@/components/about-section"
-import { ServicesSection } from "@/components/services-section"
-import { FactorySection } from "@/components/factory-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import Navigation from "@/components/Navigation"
+import Hero from "@/components/Hero"
+import Services from "@/components/Services"
+import About from "@/components/About"
+import Facility from "@/components/Facility"
+import Contact from "@/components/Contact"
+import FooterNew from "@/components/footer"
 
 export default function Home() {
   const [isAgeVerified, setIsAgeVerified] = useState(false)
@@ -37,14 +36,13 @@ export default function Home() {
       {showModal && <AgeVerificationModal onVerify={handleAgeVerification} />}
 
       <NicotineWarningBanner />
-      <Header />
-      <HeroSection />
-      <TrustIndicators />
-      <AboutSection />
-      <ServicesSection />
-      <FactorySection />
-      <ContactSection />
-      <Footer />
+      <Navigation />
+      <Hero />
+      <Services />
+      <About />
+      <Facility />
+      <Contact />
+      <FooterNew />
     </main>
   )
 }

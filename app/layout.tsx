@@ -1,47 +1,21 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Outfit } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { generateSiteMetadata, organizationSchema, localBusinessSchema, JsonLd } from "@/lib/seo-config"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-display" })
 
-export const metadata: Metadata = {
-  title: "Pouch Factory Inc. | Premium Pouch Manufacturing",
-  description:
-    "FDA-graded, GMP-compliant contract manufacturer for nicotine, hemp, and functional pouches. Born in Sweden. Made in America. Tennessee-based facility.",
-  keywords: [
-    "pouch manufacturing",
-    "nicotine pouches",
-    "hemp pouches",
-    "contract manufacturing",
-    "private label",
-    "OEM manufacturing",
-    "GMP compliant",
-    "FDA registered",
-  ],
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
+export const metadata: Metadata = generateSiteMetadata({
+  title: 'Pouch Factory Inc. | Premium White Label Nicotine Pouch Manufacturing',
+  description: 'The world\'s most advanced pouch manufacturing facility. FDA-graded, GMP-compliant, and optimized for speed. Custom nicotine, hemp, and functional pouches made in the USA.',
+  keywords: ['Nicotine Pouch Manufacturer', 'White Label Pouches', 'Zyn Alternative Manufacturer', 'Hemp Pouches', 'FDA Graded Facility', 'Pouch Factory Tennessee'],
+})
 
 export const viewport: Viewport = {
-  themeColor: "#005293",
+  themeColor: "#020617",
   width: "device-width",
   initialScale: 1,
 }
@@ -53,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+      <head>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={localBusinessSchema} />
+      </head>
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>
